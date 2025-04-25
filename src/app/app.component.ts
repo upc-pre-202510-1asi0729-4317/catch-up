@@ -1,13 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  MatCard,
-  MatCardActions,
-  MatCardContent,
-  MatCardHeader,
-  MatCardImage, MatCardSubtitle,
-  MatCardTitle
-} from '@angular/material/card';
-import {MatButton} from '@angular/material/button';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +10,11 @@ import {MatButton} from '@angular/material/button';
 })
 export class AppComponent {
   title = 'catch-up';
+
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.addLangs(['en', 'es']);
+    translate.use('es');
+  }
+
 }
