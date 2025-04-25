@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
+import {LanguageSwitcherComponent} from './public/components/language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [
+    LanguageSwitcherComponent,
+    TranslatePipe
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   standalone: true
@@ -14,7 +18,7 @@ export class AppComponent {
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
     translate.addLangs(['en', 'es']);
-    translate.use('es');
+    translate.use('en');
   }
 
 }
