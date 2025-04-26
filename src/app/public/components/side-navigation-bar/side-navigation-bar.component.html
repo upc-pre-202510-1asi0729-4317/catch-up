@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer fixedInViewport>
     <mat-toolbar>Sources</mat-toolbar>
-    // source list
+    <app-source-list [sources]="sources" />
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
